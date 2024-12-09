@@ -7,10 +7,20 @@ app = Flask(__name__)
 def index():
     return "Hello World"
 
-@app.route("/patient/<id>")
+@app.route("/patient/id/<id>")
 def get_claim_by_id(id):
     try:
         claims = db.get_claim_by_id(id)
+        return jsonify(claims)
+    except ValueError as e:
+        return str(e)
+    except TypeError as e:
+        return str(e)
+
+@app.route("/patient/name/<name>")
+def get_claims_by_name(name):
+    try:
+        claims = db.get_claims_by_name(name)
         return jsonify(claims)
     except ValueError as e:
         return str(e)

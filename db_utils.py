@@ -31,10 +31,10 @@ def get_claims_by_name(name):
     """
     db = get_db()
     claim = db.loc[db["patient_name"] == name]
-    if len(claim) == 1:
-        return claim
-    else:
-        raise ValueError("No such patient with that name")
+    if len(claim) == 0:
+       raise ValueError("No such patient with that name")
+    else: 
+     return claim.to_dict(orient="records")
 
 
 def get_claims_by_date(start,end,id = -1):
@@ -55,7 +55,7 @@ def get_claims_by_date(start,end,id = -1):
                 claims = claims[claims["patient_id"] == id] 
         
             if len(claims) > 0: 
-                return claims
+                return claims.to_dict(orient="records")
             else:
                 raise ValueError("No claims for that date range")
         else:

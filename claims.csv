@@ -1,0 +1,11 @@
+claim_id,patient_name,claim_date,patient_address,insurance_provider,service_code
+1,John Doe,2023-11-15,123 Main St, Cityville, CA 90210,Blue Shield,99213
+2,Jane Smith,2023-12-02,456 Elm St, Anytown, TX 75201,Aetna,99214
+3,Michael Johnson,2023-11-28,789 Oak St, Somewhereville, FL 33139,UnitedHealthcare,99215
+4,Emily Davis,2023-12-10,101 Pine St, Nowhereland, WA 98101,Cigna,99212
+5,David Lee,2023-11-22,202 Cedar St, Anytown, TX 75201,Aetna,99214
+6,Sarah Kim,2023-12-05,303 Maple St, Cityville, CA 90210,Blue Shield,99215
+7,Thomas Brown,2023-11-18,404 Willow St, Somewhereville, FL 33139,UnitedHealthcare,99212
+8,Olivia Miller,2023-12-12,505 Oak St, Nowhereland, WA 98101,Cigna,99213
+9,Henry Wilson,2023-11-25,606 Pine St, Anytown, TX 75201,Aetna,99214
+10,Grace Wong,2023-12-07,707 Cedar St, Cityville, CA 90210,Blue Shield,99215

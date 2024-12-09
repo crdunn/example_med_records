@@ -9,3 +9,4 @@ claim_id,patient_name,patient_id,claim_date,patient_address,patient_city,patient
 8,Olivia Miller,8,2023-12-12,505 Oak St, Nowhereland, WA 98101,Cigna,99213
 9,Henry Wilson,9,2023-11-25,606 Pine St, Anytown, TX 75201,Aetna,99214
 10,Grace Wong,10,2023-12-07,707 Cedar St, Cityville, CA 90210,Blue Shield,99215
+11,John Doe,1,2023-12-08,123 Main St,Cityville,CA 90210,Blue Shield,99213

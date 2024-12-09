@@ -30,14 +30,12 @@ def get_claims_by_name(name):
         ValueError if there is no claim with that id
     """
     db = get_db()
-    if isinstance(id,int):
-        claim = db.loc[db["claim_id"] == name]
-        if len(claim) == 1:
-            return claim
-        else:
-            raise ValueError("No such patient with that name")
-    else: 
-        raise TypeError("name must be a string")
+    claim = db.loc[db["patient_name"] == name]
+    if len(claim) == 1:
+        return claim
+    else:
+        raise ValueError("No such patient with that name")
+
 
 def get_claims_by_date(start,end,id = -1):
     """
@@ -67,15 +65,49 @@ def get_claims_by_date(start,end,id = -1):
         raise TypeError("Dates must be in Year-Month-Day format")
 
 def add_claims(claims):
-    pass
+    """
+    This function accepts a list of dictionaries that contain data that will be added to the database.
+    Raises:
+        TypeError: if a list of dictionaries is not provided
+        ValueError if a dictionary's keys do not match the columns of the dataframe
+    """
+    if isinstance(claims,list):
+        db = get_db()
+        for claim in claims:
+            if isinstance(claim,dict):
+                row = pd.DataFrame(claim,index=[0])
+                db = pd.concat([db,row],ignore_index=True)
+            else:
+                raise TypeError("Claims must be a list of dictionaries")
+        to_db(db)
+    else:
+        raise TypeError("Claims must be a list of dictionaries")
+
 
 def update_claim(id, claim):
+    """
+    TODO: Implement Update Claims function
+    """
     pass
 
 def delete_claim(id):
-    pass
+    """
+    TODO: Implement Delete Claims function
+    """
 
 if __name__ == "__main__":
+    print("db_utils.py")
     # print(get_claim_by_id(100))
-    print(get_claims_by_date("2023-11-01","2023-11-29",1))
+    # print(get_claims_by_date("2023-11-01","2023-11-29",1))
     # print(get_claims_by_date("2023-11-01","2023-11-29","a"))
+    # add_claims([{
+    #     "claim_id":11,
+    #     "patient_name":"John Doe",
+    #     "patient_id":1,
+    #     "claim_date":"2023-12-08",
+    #     "patient_address":"123 Main St",
+    #     "patient_city":"Cityville",
+    #     "patient_state":"CA 90210",
+    #     "insurance_provider":"Blue Shield",
+    #     "service_code":"99213"
+    # }])

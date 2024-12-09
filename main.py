@@ -9,9 +9,14 @@ def index():
 
 @app.route("/patient/<id>")
 def get_claim_by_id(id):
-    claim = db.get_claim_by_id(id)
-    print(claim)
-    return jsonify(db.get_claim_by_id(id))
+    try:
+        claims = db.get_claim_by_id(id)
+        return jsonify(claims)
+    except ValueError as e:
+        return str(e)
+    except TypeError as e:
+        return str(e)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,4 +1,4 @@
-claim_id,patient_name,claim_date,patient_address,insurance_provider,service_code
+claim_id,patient_name,claim_date,patient_address,patient_city,patient_state,insurance_provider,service_code
 1,John Doe,2023-11-15,123 Main St, Cityville, CA 90210,Blue Shield,99213
 2,Jane Smith,2023-12-02,456 Elm St, Anytown, TX 75201,Aetna,99214
 3,Michael Johnson,2023-11-28,789 Oak St, Somewhereville, FL 33139,UnitedHealthcare,99215

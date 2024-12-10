@@ -5,6 +5,11 @@ def get_db():
 def to_db(df):
     df.to_csv("claims.csv",index=False)
 
+def get_all_claims():
+    db = get_db()
+    return db.to_dict(orient="records")
+
+
 def get_claim_by_id(id):
     """
     This function accepts an integer and checks it against the values of claim_id in the database.

@@ -48,6 +48,7 @@ def upload_claims():
         try:
             claims = request.json
             db.add_claims(claims)
+            return "Added Claims"
         except TypeError as e:
             return str(e)
         except ValueError as e:

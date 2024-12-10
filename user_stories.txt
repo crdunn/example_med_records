@@ -2,4 +2,4 @@
 
 2. As a user, I should be able to search claims within a range of dates
 
-3. As a doctor, I should be able to upload several claims at once and add them to the database
+3. As a provider, I should be able to upload several claims at once and add them to the database

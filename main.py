@@ -27,6 +27,17 @@ def get_claims_by_name(name):
     except TypeError as e:
         return str(e)
 
+@app.route("/user/<start>/<end>")
+@app.route("/user/<start>/<end>/<id>")
+def get_claims_by_date(start,end,id=-1):
+    try:    
+        claims = db.get_claims_by_date(start,end,id)
+        return jsonify(claims)
+    except ValueError as e:
+        return str(e)
+    except TypeError as e:
+        return str(e)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
